@@ -1,0 +1,50 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,unit2,generics.collections, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var ListaDePessoas:TObjectList<TPessoa>;
+    p1: TPessoa;
+    p2: TPessoa;
+    obj: TPessoa;
+begin
+  ListaDePessoas := TObjectList<TPessoa>.Create();
+  p1 := TPessoa.Create;
+  p1.Nome := 'Joao';
+  p2 := TPessoa.Create;
+  p2.Nome := 'Maria';
+
+  ListaDePessoas.Add(p1);
+  ListaDePessoas.Add(p2);
+
+  obj := TPessoa.Create;
+  for obj in ListaDePessoas do
+  begin
+      ShowMessage(obj.Nome);
+  end;
+
+  ListaDePessoas.Items[i].Nome;
+end;
+
+end.

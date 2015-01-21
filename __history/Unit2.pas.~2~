@@ -1,0 +1,13 @@
+unit Unit2;
+
+interface
+type
+  TPessoa = class
+    public
+      Property Nome:String;
+      property Idade:Integer;
+  end;
+
+implementation
+
+end.

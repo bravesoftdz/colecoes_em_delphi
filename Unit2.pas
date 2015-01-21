@@ -1,0 +1,30 @@
+unit Unit2;
+
+interface
+type
+  TPessoa = class
+  private
+    FIdade: Integer;
+    FNome: String;
+    procedure SetIdade(const Value: Integer);
+    procedure SetNome(const Value: String);
+    public
+      Property Nome:String read FNome write SetNome;
+      property Idade:Integer read FIdade write SetIdade;
+  end;
+
+implementation
+
+{ TPessoa }
+
+procedure TPessoa.SetIdade(const Value: Integer);
+begin
+  FIdade := Value;
+end;
+
+procedure TPessoa.SetNome(const Value: String);
+begin
+  FNome := Value;
+end;
+
+end.
